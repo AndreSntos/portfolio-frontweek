@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="src/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&display=swap"
@@ -162,7 +162,7 @@
 
         </div>
         <div class="container-item">
-            <img src="img/fantasma.png" alt="">
+            <img src="src/img/fantasma.png" alt="">
         </div>
     </section>
 
@@ -170,7 +170,7 @@
 
     <section class="list" id="section-01">
         <div class="list-item">
-            <img src="img/square3.png" alt="">
+            <img src="src/img/square3.png" alt="">
             <h2 class="pl-2">Selected Works</h2>
         </div>
         <div class="list-item py-6">
@@ -178,7 +178,7 @@
             <a href="" target="_blank">
                 <h3>Nubank</h3>
             </a>
-            <img src="img/lp-nubank.png" alt="" class="img-project">
+            <img src="src/img/lp-nubank.png" alt="" class="img-project">
         </div>
 
 
@@ -187,12 +187,12 @@
             <a href="" target="_blank">
                 <h3>Spider-man</h3>
             </a>
-            <img src="img/lp-spiderman.png" alt="" class="img-project spider">
+            <img src="src/img/lp-spiderman.png" alt="" class="img-project spider">
         </div>
     </section>
 
     <section class="get mt-9" id="section-02">
-        <img src="img/square3.png" alt="">
+        <img src="src/img/square3.png" alt="">
         <h2>Get in touch</h2>
         <a href="" type="mail">
             <h3 class="mt-9 mask text-center">Andredasil2002@gmail.com</h3>
@@ -209,83 +209,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"
     integrity="sha512-jNJOCd1PIjJoUa1XTDKaPdBLNUe4OJTrltKG+70O5ghYZ943nTRGIzjObwC2JtSm1fG7T06GbUApR2eirIU/jA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script>
-
-    document.addEventListener('DOMContentLoaded', () => {
-        let tl = gsap.timeline();
-        tl
-            .from(".menu-1", {
-                duration: 1,
-                y: 50,
-                opacity: 0,
-                ease: "power3.out",
-            })
-            .from(".menu-2", {
-                duration: 1,
-                y: 50,
-                opacity: 0,
-                ease: "power3.out",
-            }, "-=0.8")
-            .from(".menu-3", {
-                duration: 1,
-                y: 50,
-                opacity: 0,
-                ease: "power3.out",
-            }, "-=0.8")
-            .from(".menu-4", {
-                duration: 1,
-                y: 50,
-                opacity: 0,
-                ease: "power3.out",
-            }, "-=0.8")
-            .from(".menu-5", {
-                duration: 1,
-                y: 50,
-                opacity: 0,
-                ease: "power3.out",
-            }, "-=0.8")
-            .from(".container-item div", {
-                duration: 1.5,
-                y: 50,
-                opacity: 0,
-                stagger: {each: 0.2},
-                ease: "power3.out",
-            }, "-=0.8")
-            .from(".container-item img", {
-                duration: 1.5,
-                y: 50,
-                opacity: 0,
-                ease: "power3.out",
-            }, "-=0.8")
-
-            gsap.registerPlugin(ScrollTrigger);
-
-            gsap.from("#section-01 div",{
-                duration: 1,
-                y: 300,
-                opacity: 0,
-                stagger: {each: 0.2},
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: "#section-01",
-
-                }
-            });
-
-            gsap.from("#section-02 div",{
-                duration: 1,
-                y: 300,
-                opacity: 0,
-                stagger: {each: 0.2},
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: "#section-02",
-
-                }
-            });
-    })
-
-</script>
+<script src="src/js/app.js"></script>
 
 </html>
