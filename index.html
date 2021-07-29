@@ -19,15 +19,15 @@
 
     <header class="menu">
         <div class="menu-left">
-            <a href="" class="link">Home</a>
-            <a href="" class="link">About</a>
+            <a href="" class="link menu-1">Home</a>
+            <a href="" class="link menu-2">About</a>
         </div>
         <div class="menu-logo">
-            <h5>André.</h5>
+            <h5 class="menu-3">André.</h5>
         </div>
         <div class="menu-right">
-            <a href="" class="link">Works</a>
-            <a href="" class="link">Get in touch</a>
+            <a href="" class="link menu-4">Works</a>
+            <a href="" class="link menu-5">Get in touch</a>
         </div>
     </header>
 
@@ -145,13 +145,20 @@
 
     <section class="container hero">
         <div class="container-item">
-            <h1>André Santos</h1>
-            <h2 class="mask text-right mt-7">Creative Developer</h3>
-                <h2 class="mask ">Visual Design</h3>
 
-                    <div class="flex-end pr-7">
-                        <a href="" class="square ">WORKS</a>
-                    </div>
+            <div>
+                <h1>André Santos</h1>
+            </div>
+            <div>
+                <h2 class="mask text-right mt-7">Creative Developer</h2>
+            </div>
+            <div>
+                <h2 class="mask ">Visual Design</h2>
+            </div>
+            <div class="flex-end pr-7">
+                <a href="" class="square ">WORKS</a>
+            </div>
+
 
         </div>
         <div class="container-item">
@@ -161,31 +168,124 @@
 
     <!-- selected works -->
 
-    <section class="list">
+    <section class="list" id="section-01">
         <div class="list-item">
             <img src="img/square3.png" alt="">
             <h2 class="pl-2">Selected Works</h2>
         </div>
         <div class="list-item py-6">
             <h5 class="color-gray mr-2">01.</h5>
-            <a href="" target="_blank"> <h3>Nubank</h3></a>
+            <a href="" target="_blank">
+                <h3>Nubank</h3>
+            </a>
             <img src="img/lp-nubank.png" alt="" class="img-project">
         </div>
 
 
         <div class="list-item py-6">
             <h5 class="color-gray mr-2">02.</h5>
-            <a href="" target="_blank"> <h3>Spider-man</h3></a>
+            <a href="" target="_blank">
+                <h3>Spider-man</h3>
+            </a>
             <img src="img/lp-spiderman.png" alt="" class="img-project spider">
         </div>
     </section>
 
-    <section class="get mt-9">
+    <section class="get mt-9" id="section-02">
         <img src="img/square3.png" alt="">
         <h2>Get in touch</h2>
-        <h3 class="mt-9 mask text-center">Andredasil2002@gmail.com</h3>
+        <a href="" type="mail">
+            <h3 class="mt-9 mask text-center">Andredasil2002@gmail.com</h3>
+        </a>
     </section>
 
 </body>
+
+<!-- scripts  -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"
+    integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"
+    integrity="sha512-jNJOCd1PIjJoUa1XTDKaPdBLNUe4OJTrltKG+70O5ghYZ943nTRGIzjObwC2JtSm1fG7T06GbUApR2eirIU/jA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let tl = gsap.timeline();
+        tl
+            .from(".menu-1", {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: "power3.out",
+            })
+            .from(".menu-2", {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: "power3.out",
+            }, "-=0.8")
+            .from(".menu-3", {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: "power3.out",
+            }, "-=0.8")
+            .from(".menu-4", {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: "power3.out",
+            }, "-=0.8")
+            .from(".menu-5", {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: "power3.out",
+            }, "-=0.8")
+            .from(".container-item div", {
+                duration: 1.5,
+                y: 50,
+                opacity: 0,
+                stagger: {each: 0.2},
+                ease: "power3.out",
+            }, "-=0.8")
+            .from(".container-item img", {
+                duration: 1.5,
+                y: 50,
+                opacity: 0,
+                ease: "power3.out",
+            }, "-=0.8")
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.from("#section-01 div",{
+                duration: 1,
+                y: 300,
+                opacity: 0,
+                stagger: {each: 0.2},
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: "#section-01",
+
+                }
+            });
+
+            gsap.from("#section-02 div",{
+                duration: 1,
+                y: 300,
+                opacity: 0,
+                stagger: {each: 0.2},
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: "#section-02",
+
+                }
+            });
+    })
+
+</script>
 
 </html>
